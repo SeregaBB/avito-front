@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Dashboard</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main/style.a1dc1284e099e96b5ba1.css">
+</head>
+<body>
+    <header class="header">
+    <img src="https://miro.medium.com/max/2400/1*eUZjus8aqF76roLdm-SG9Q.png" alt="" class="header-logo">
+        <form name="form" class="form">
+            <input type="text" name="query" class="input">
+        <button name="search" type="submit" class="btn">Искать</button>
+        </form>
+        
+    </header>
+   <section class="results">
+    
+    
+   
+   
+   </section>
+   <section class="load"><img src="./spinner.gif" alt=""></section>
+   <section class="error">
+       <p class="error-text">somthing went wrong... :(</p>
+   </section>
+   <template>
+    <div class="card" id="1">
+       <div class="left-block">
+            <img src="https://www.clipartmax.com/png/full/97-978328_avatar-icon-free-fa-user-circle-o.png" alt="avatar" class="avatar">
+            <a href="" class="link" target="_blank">link</a>
+        </div>
+
+        
+        <h2 class="title">Repository Title</h2>
+        <div class="right-block">
+
+            <span class="stars">&starf; <img src="./spinner.gif" alt="" width="40"></span>    
+            <span class="last-commit"><img src="./spinner.gif" alt="" width="40"></span>
+        </div>
+    </template>
+
+   <ul class="pagination">
+    <li class="page" id="1"><a href="" class="page-link page-link-active">1</a></li>
+    <li class="page" id="2"><a href="" class="page-link">2</a></li>
+    <li class="page" id="3"><a href="" class="page-link">3</a></li>
+    <li class="page" id="4"><a href="" class="page-link">4</a></li>
+    <li class="page" id="5"><a href="" class="page-link">5</a></li>
+    <li class="page" id="6"><a href="" class="page-link">6</a></li>
+    <li class="page" id="7"><a href="" class="page-link">7</a></li>
+    <li class="page" id="8"><a href="" class="page-link">8</a></li>
+    <li class="page" id="9"><a href="" class="page-link">9</a></li>
+    <li class="page" id="10"><a href="" class="page-link">10</a></li>
+    </ul>
+
+    <div class="modal">
+        <div class="modal-header">
+            <h2 class="modal-title">Repo title</h2>
+            <span class="modal-stars">&star; 10</span>
+        </div>
+
+        <div class="modal-body">
+            <span class="close">&#10006;</span>
+            <div class="top">
+                <img src="https://www.clipartmax.com/png/full/97-978328_avatar-icon-free-fa-user-circle-o.png" alt="" class="modal-avatar">
+                <div class="flex-top">
+                    <span class="modal-nick"><img src="./spinner.gif" alt="" width="40"></span>
+                    <span class="modal-last-commit">Last commit 1.1.1</span>
+                    <p class="modal-subtitle"><img src="./spinner.gif" alt="" width="40"></p>
+                </div>
+                
+            </div>
+            <div class="bottom">
+                
+                <label class="label" for="lang">Languages:</label>
+                <ul class="modal-languages" name="lang">
+                    <img src="./spinner.gif" alt="" width="40">
+                </ul>
+                <label class="label" for="contr">Top contributors:</label>
+                <ul class="modal-contributors" name="contr">
+                <img src="./spinner.gif" alt="" width="40">
+            </ul>
+            </div>
+           
+        </div>
+            
+
+        <!--
+            [Название репозитория] - [кол-во звёзд на github] - [дата последнего коммита]
+            [Фото владельца репозитория, если есть] - [Nickname владельца репозитория с ссылкой на него]
+            [Список используемых языков в репозитории]
+            [Краткое описание репозитория]
+            [10 наиболее активных контрибьютеров]   
+        -->
+    </div>
+
+<script type="module" src="main/main.js"></script>
+</body>
+</html>
