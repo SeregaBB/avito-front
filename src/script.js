@@ -22,6 +22,7 @@ const template = document.querySelector('template');
 const modalElem = document.querySelector('.modal');
 const firstPage = paginator.querySelector('.page-link');
 
+
 const resultsContainer = new Results(results);
 const api = new Api(token, 'https://api.github.com/');
 const loader = new Loader(loading);
@@ -72,6 +73,12 @@ function handler(event) {
 
     api.search(form.elements.query.value)
     .then(data=> {
+        if(data.total_count === 0) {
+            loader.hide();  
+            error.show('Ничего не найдено');
+            return;
+        }
+        
         const numOfPages = Math.floor(data.items.length / itemsPerPage) * 1;
         console.log(numOfPages);
         pages.hideExtPages(numOfPages);
@@ -87,7 +94,7 @@ function handler(event) {
     })
     .catch(err => {
         loader.hide();
-        error.show(err.message)
+        error.show(err.status)
         console.error(err);
     })
 }
@@ -123,3 +130,8 @@ resultsContainer.addEventListener('click',(event)=>{
     
                  
             })
+
+
+            function notFound(){
+
+            }

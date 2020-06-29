@@ -299,3 +299,7 @@ body{
 .visible-flex-element {
     display: flex;
 }
+
+.no-result {
+    display: none;
+}
