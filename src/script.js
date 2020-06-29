@@ -10,7 +10,7 @@ import Results from '../src/components/Results';
 import SaverFilters from '../src/components/SaverFilters';
 
 
-const token = '2795431e178f4dd3bb82a26f343dd7930f3321ce';
+const token = '';
 const results = document.querySelector('.results');
 const reg = new RegExp('(http://)|(https://)', 'gi');
 const itemsPerPage = 10;
@@ -20,6 +20,7 @@ const paginator = document.querySelector('.pagination');
 const form = document.forms.form;
 const template = document.querySelector('template');
 const modalElem = document.querySelector('.modal');
+const firstPage = paginator.querySelector('.page-link');
 
 const resultsContainer = new Results(results);
 const api = new Api(token, 'https://api.github.com/');
@@ -54,7 +55,12 @@ window.addEventListener('beforeunload',()=>{
 
 function handler(event) {
     
-    if(event) event.preventDefault()
+    if(event)  {
+        event.preventDefault()
+    if(event.type === 'submit' && form.elements.query.value !== filters.query){
+        pages.activatePage(firstPage);
+    }
+}
     resultsContainer.clearContainer();
     loader.show();
     error.hide();
